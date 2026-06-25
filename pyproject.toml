@@ -1,21 +1,42 @@
 [project]
 name = "hubris"
-version = "0.2.3"
+version = "0.4.0a1"
 description = "Helpful Utility to Bring Reporting Into Spreadsheets"
 authors = [
-    {name = "Steve Holden",email = "steve@holdenweb.com"}
+    { name = "Steve Holden", email = "steve@holdenweb.com" },
 ]
-license = {text = "MIT"}
+license = "MIT"
+license-files = ["LICENSE"]
 readme = "README.md"
 requires-python = ">=3.12"
+keywords = ["spreadsheet", "excel", "xlsx", "openpyxl", "reporting", "json", "data-extraction"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Office/Business :: Financial :: Spreadsheet",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
-    "openpyxl (>=3.1.5,<4.0.0)"
+    "openpyxl>=3.1.5,<4.0.0",
 ]
-packages = [
-    { include = "hubris", from = "src" },
-]
-
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hubris"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
