@@ -1,6 +1,6 @@
 [project]
 name = "hubris"
-version = "0.4.0a1"
+version = "0.4.0a2"
 description = "Helpful Utility to Bring Reporting Into Spreadsheets"
 authors = [
     { name = "Steve Holden", email = "steve@holdenweb.com" },
@@ -40,3 +40,6 @@ dev = ["pytest>=8"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+
+[project.scripts]
+hubris = "hubris:main"
