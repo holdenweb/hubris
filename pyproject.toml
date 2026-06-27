@@ -1,6 +1,6 @@
 [project]
 name = "hubris"
-version = "0.4.0a2"
+version = "0.4.0"
 description = "Helpful Utility to Bring Reporting Into Spreadsheets"
 authors = [
     { name = "Steve Holden", email = "steve@holdenweb.com" },

@@ -20,14 +20,14 @@ that don't affect existing workflows.
 
 It lets you add data specifications to any existing spreadsheet by creating
 named ranges in the spreadsheet. By default HUBRIS will look for a range
-name `Parameteres`, although this can be overwritten on the command line,
-as its starting point. The parameters range shoud be precisely two columns wide, and HUBRIS
+name `Parameters` as its starting point, although this can be overridden on the command line.
+This range should be precisely two columns wide, and HUBRIS
 treats the left-hand column as names and the right-hand column as values.
 Normally, the values are used literally after extraction from the spreadsheet.
-Two special value types are given special treatment.
+Two formats for the value are given special treatment.
 
-  - `[range-name]`: the range is exported as a JSON list or, if  it's two-dimensionsl a list of row lists.
-  - `{range_name}`: The range, which must be two columns wide, becomes a JSON object where the left-hand column specifies
+  - `[range-name]`: the named range is exported as a JSON list or, if  it's two-dimensionsl a list of row lists.
+  - `{range_name}`: The named range, which must be two columns wide, becomes a JSON object where the left-hand column specifies
     the names and the right-hand column specifies the values.
 
 The parameter details are used to extract data from the spreadsheet, which is then sent to standard output as JSON.
